@@ -1,0 +1,34 @@
+.NavigationItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.projects{
+    position:absolute; 
+    TOP:4.5%; 
+    LEFT:86vw; 
+}
+
+.profile_img{
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    position:absolute; 
+    TOP:-2vh; 
+    LEFT:6vw; 
+    min-width: 5vw;
+    min-height: 10vh;
+    max-width: 8vw;
+    max-height: 10vh;
+    /* WIDTH:100%; 
+    HEIGHT:100%; */
+}
+@media (min-width: 500px) {
+    .NavigationItems {
+        flex-flow: row;
+    }
+}

@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    width: 100%;
+    background-color: lightblue;
+}
+.product_listing {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.prods_item_type{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(31,79,122);
+    margin-left: 2%;
+}
+.prods_itemId{
+    color: rgb(126,126,126);
+}
+.product_list_item {
+    border: 3px solid rgb(229,229,229);
+    margin: 4px;
+    width: 18%;
+    height: 44vh;
+}
+.prod_img{
+    height: 25%;
+    width: 100%;
+}
+.prod_verified{
+    margin: 0;
+    text-align: right;
+    color: rgb(91,155,213);
+    font-size: 12px;
+}
+.prod_header{
+    margin: 0;
+    font-weight: bold;
+    color: rgb(31,79,122);
+    text-align: center;
+}
+.Link{
+    text-decoration: none;
+}
+.prod_header_back{
+    margin-bottom: 3%;
+    text-decoration: none;
+}
+.prod_spec{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    color: rgb(96,96,96);
+}
+.prod_spec_back{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 100%;
+    background-color: rgb(230,230,230);
+}
+.prod_past_spec{   
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center; 
+    color: rgb(192,0,25);
+}
+.prod_past_spec_back{
+    margin-top: 3%;
+}
+.checkbox_container{
+    margin-left: 5%;
+    margin-top: 7%;
+    margin-bottom: 0;
+    height: 4%;
+}
+input[type="checkbox"]{
+    -webkit-appearance: initial;
+    appearance: initial;
+    background: white;
+    width: 6.5%;
+    height: 100%;
+    border: none;
+    position: relative;
+    top: 38%;
+    border: 1px solid rgb(31,79,122);
+    border-radius: 5px;
+}
+input[type="checkbox"]:checked {
+    background: white;
+}
+input[type="checkbox"]:checked:after {
+    content: "X";
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.checkbox_compare{
+    color: rgb(93,89,122);
+    font-weight: bold;
+    font-size: 12px;
+}
+.addTo{
+    padding: 3%;
+    width: 35%;
+    margin-left: 20%;
+    background-color: rgb(99,132,163);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}

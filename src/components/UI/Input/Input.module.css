@@ -1,0 +1,99 @@
+.Input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    height: 7vmin;
+    position: relative;
+}
+
+.Label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(118,112,112);
+}
+
+.InputElement {
+    color: rgb(104, 104, 104);
+    outline: none;
+    border: 1px solid grey;
+    background-color: white;
+    font: inherit;
+    font-weight: bold;
+    padding: 10px 10px;
+    display: block;
+    height: 5vmin;
+    width: 30vmax;
+    box-sizing: border-box;
+    border-radius: 7px;
+    flex: 1;
+}
+
+.icon{
+    font-size: xx-large;
+    right: 2.5vmax;
+    position: relative;
+    color: rgb(146,146,146);
+}
+.select_search_icon{
+    position: absolute;
+    top: 1.2vh;
+    left: 35vw;
+    color: black;
+    font-size: 1em;
+}
+.select_button{
+    position: absolute;
+    left: 50px;
+}
+.search_button{
+    width: 25px;
+    height: 25px;
+    /* display: flex; */
+    top: 8px;
+    bottom: 50px;
+    right: -100px;
+    position: absolute;
+    background-color: transparent;
+    border: 1px;
+}
+
+.image{
+    top: 70vh;
+    left: 21vw;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    z-index: 3;
+}
+
+.img{    
+    max-width: 10vw;
+    max-height: 10vh;
+}
+
+.search_inputElement{
+    width: 9vw;
+    background-color: rgb(217,217,217);
+}
+
+.select_search{
+    border: 1px solid grey;
+    top: -5vh;
+    left: 9vw;
+    width: 30vw;
+    display: block;
+    position: absolute;
+}
+
+.InputElement:focus {
+    outline: none;
+    background-color: white;
+}
+
+.Invalid {
+    border: 1px solid red;
+    background-color: #FDA49A;
+}

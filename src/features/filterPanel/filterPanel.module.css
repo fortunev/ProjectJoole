@@ -1,0 +1,155 @@
+.search{
+    padding: 3%;
+    border-bottom: 3px solid rgb(225,225,225);
+}
+.search_span{
+    color: rgb(89,89,89);
+    margin-left: 6%;
+    margin-right: 11%;
+    font-size: 17px;
+}
+.buttons{
+    background-color: rgb(127,127,127);
+    padding: 2%;
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
+    border: 0;
+    margin-left: 0.3vw;
+    margin-right: 0.3vw;
+    color: white;
+}
+.header{
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    /* margin-bottom: 5vh; */
+    /* border-bottom: 2px solid rgb(225,225,225); */
+}
+.header_spanProduct{
+    background-color: rgb(66,113,155);
+    color: white;
+    border-top: 2px solid rgb(66,113,155);
+    border-bottom: 2px solid rgb(66,113,155);
+}
+.header_spanProject{
+    border-bottom: 2px solid rgb(225,225,225);
+    border-left: 2px solid rgb(225,225,225);
+}
+.header span{
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 2.85vw;
+    padding-right: 2.85vw;
+}
+.product_type{
+    padding: 2%;
+    padding-bottom: 3%;
+    background-color: rgb(242,242,242);
+    border-bottom: 2px solid rgb(225,225,225);
+}
+.product_type_detail{
+    width: 10vw;
+    padding: 2%;
+    padding-bottom: 3%;
+    background-color: rgb(242,242,242);
+    border-bottom: 2px solid rgb(225,225,225);
+}
+.CaretRight{
+    margin-left: 53%;
+    padding: 0;
+    font-size: 25px;    
+}
+.CaretRight_techSpec{
+    margin-left: 25%;
+    padding: 0;
+    font-size: 25px;
+}
+.product_type_radio{
+    padding-top: 0;
+    padding-bottom: 2%;
+    margin-left: 0;
+    background-color: white;
+    display: none;
+}
+.product_type_radio_detail{
+    width: 185%;
+    padding-top: 0;
+    padding-bottom: 2%;
+    margin-left: 0;
+    background-color: white;
+    display: none;
+}
+.filter_title {    
+    margin: 0;
+}
+.filter_button{
+    margin: 0;
+}
+.product_type_radio .filter_title{
+    margin-left: 5%;
+    font-weight: bold;
+}
+.product_type_radio .filter_button{
+    font-size: 12px;
+    margin-left: 20%;
+}
+.showFilter:hover .product_type_radio{
+    display: block;
+}
+.showFilter:hover .product_type_radio_detail{
+    display: block;
+}
+.showFilter:hover .CaretRight svg{
+    transform: rotate(90deg);
+}
+.model_year{
+    color: rgb(89,89,89);
+    margin-left: 5%;
+    font-weight: bold;
+    font-size: 14px;
+}
+.model_year_wrap{
+    margin-left: 18%;
+}
+.dash{
+    height: 6px;
+    width: 15px;
+}
+.model_year_input{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 3vw;
+}
+.showFilter:hover .CaretRight_techSpec svg{
+    transform: rotate(90deg);
+}
+.slider_title{
+    color: rgb(89,89,89);
+    margin-left: 5%;
+    font-weight: bold;
+    font-size: 14px;
+    padding-top: 15%;
+    margin-left: 26%;
+}
+.slider_input{
+    display: flex;
+    margin-left: 2%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.tech_spec_input{
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 1.5vh;
+    width: 3vw;
+}
+.sliderStyle {
+    width: 50%;
+    height: 10%;
+    margin: 2%;
+}
+.railStyle {
+    width: 100%;
+    height: 5px;    
+    border-radius: 5px;
+    background-color: rgb(166,166,166);
+}

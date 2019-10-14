@@ -5,6 +5,19 @@ import ProdudctListItem from './product-list-item';
 import { connect } from 'react-redux';
 import classes from './product-listing.module.css';
 
+let toCompareArr = [];
+let checkedItems = new Map();
+function toCompare(e){
+    const item = e.target;
+    const isChecked = e.target.checked;
+    // this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
+    console.log(item);
+}
+
+function Compare(props){
+
+}
+
 function ProductListing(props){
     console.log(props);
     return (
@@ -34,7 +47,7 @@ function ProductListing(props){
                     <p className={classes.prod_past_spec}>Past specifications: </p>
                     <p className={classes.prod_past_spec}>{product.past_spec}</p>
                 </div>
-                <div className={classes.checkbox_container}><input type="checkbox"/>
+                <div className={classes.checkbox_container}><input type="checkbox" name={product} onChange={toCompare}/>
                     <span className={classes.checkbox_compare}> Compare</span>
                     <select className={classes.addTo} >   
                         <option label="" disabled selected>Add to</option>

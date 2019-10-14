@@ -88,7 +88,8 @@ class searchpage extends Component {
                 isLoading: false
             })
         console.log("DISPLAY - "+this.state.display+" show_prods - "+show_prods);
-        this.props.onSearch(this.state.controls.itemId.value, this.state.controls.item_type.value, this.state.hits);})
+        this.props.onSearch(this.state.controls.itemId.value, this.state.controls.item_type.value, this.state.hits);
+        })
             .catch(error => this.setState({
                 error,
                 isLoading: false
@@ -151,7 +152,8 @@ class searchpage extends Component {
             isLoading: false
         })
         console.log("DISPLAY - "+this.state.display+" show_prods - "+show_prods);
-        this.props.onSearch(this.state.controls.itemId.value, this.state.controls.item_type.value, this.state.hits);})
+        this.props.onSearch(this.state.controls.itemId.value, this.state.controls.item_type.value, this.state.hits);
+        })
         .catch(error => this.setState({
             error,
             isLoading: false

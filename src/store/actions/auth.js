@@ -65,7 +65,7 @@ export const auth = (name, email, username, password, role, image, isSignup) => 
                 console.log(response);
                 console.log(response.data.exp / 60 +" mins ");
                 const expirationDate = new Date(new Date().getTime() + response.data.exp * 1000);
-                localStorage.setItem('token', response.data.idToken);
+                localStorage.setItem('token', response.data.accessToken);
                 localStorage.setItem('expirationDate', expirationDate);
                 localStorage.setItem('userId', response.data.localId); // back end doesnt send id
                 

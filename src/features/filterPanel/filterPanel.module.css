@@ -53,13 +53,13 @@
     background-color: rgb(242,242,242);
     border-bottom: 2px solid rgb(225,225,225);
 }
-.CaretRight{
-    margin-left: 53%;
-    padding: 0;
-    font-size: 25px;    
-}
 .CaretRight_techSpec{
-    margin-left: 25%;
+    float: right;
+    padding: 0;
+    font-size: 25px;
+}
+.CaretRight_techSpec1{
+    margin-left: 70%;
     padding: 0;
     font-size: 25px;
 }

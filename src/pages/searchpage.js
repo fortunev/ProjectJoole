@@ -201,7 +201,6 @@ class searchpage extends Component {
                 <img src={logo} alt="logo" className={searchClasses.img} />   
                     <div className={headerClasses.projects}>            
                         <NavigationItem link="/projects" exact>Projects</NavigationItem>   
-
                         {/* <Link className={searchClasses.logout} to={{pathname: '/logout'}}>LOGOUT</Link> */}
                         {/* <div className={searchClasses.logout}>
                         <Link to={{pathname: '/logout'}}></Link>
@@ -248,6 +247,7 @@ class searchpage extends Component {
         else{
             form = (
                 <div>
+                    {/* <Link to={{pathname: '/logout'}}>LOGOUT</Link> */}
                     <div className={inputClasses.search_input}>                    
                         <select className={inClassesName.join(' ')} type='item_type' placeholder='item_type' onChange={(event) => this.inputChangedHandler(event.target.value, "item_type")}>   
                             <option label="Mechanical">Mechanical</option>

@@ -166,7 +166,6 @@ class Auth extends Component {
     }
 
     inputChangedHandler = ( event, controlName ) => {
-      // console.log(...this.state.controls);
       let updatedControls = null;
       if (controlName === "image"){
         updatedControls = {
@@ -186,7 +185,6 @@ class Auth extends Component {
             [controlName]: {
                 ...this.state.controls[controlName],
                 value: event.target.value,
-                // file: URL.createObjectURL(event.target.files[0]),
                 valid: this.checkValidity( event.target.value, this.state.controls[controlName].validation ),
                 touched: true
             }
@@ -195,7 +193,6 @@ class Auth extends Component {
         console.log(updatedControls);
         console.log(this.state);
         this.setState( { controls: updatedControls } );
-
     }
 
     submitHandler = ( event ) => {

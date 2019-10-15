@@ -110,7 +110,7 @@ class filterPanel extends Component{
             </div>
             <div className={classes.showFilter}>
                 <div className={classes.product_type}>
-                    <span>Product Type <i className={classes.CaretRight}><CaretRight/></i></span>                
+                    <span>Product Type <i className={classes.CaretRight_techSpec}><CaretRight/></i></span>                
                 </div>
                 <div className={classes.product_type_radio}>
                     <p className={classes.filter_title}>Use type</p>

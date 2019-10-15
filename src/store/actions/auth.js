@@ -29,6 +29,7 @@ export const logout = () => {
     localStorage.removeItem('userId');
     localStorage.removeItem('itemId');
     localStorage.removeItem('item_type');
+    localStorage.removeItem('image');
     return {
         type: actionTypes.AUTH_LOGOUT
     };

@@ -45,7 +45,6 @@ export const searchSuccess = (hits, itemId, item_type) => {
 
 export const search = (itemId, item_type, hits) => {
     return dispatch => {
-        console.log("doSearch - " +itemId+" "+item_type+" hits: "+hits);
         // dispatch(searchStart());
         const searchData = {
             itemId: itemId,

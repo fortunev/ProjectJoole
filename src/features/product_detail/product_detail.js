@@ -6,7 +6,6 @@ import NavigationItem from '../../components/navigation/navigationItem/navigatio
 import logo from '../../images/logo.png';
 import doc from '../../images/doc.png';
 import pdf from '../../images/pdf.png';
-import eis from '../../images/eis.png';
 import rfa from '../../images/rfa.png';
 import dwg from '../../images/dwg.png';
 
@@ -17,8 +16,6 @@ import pListClasses from '../product-listing/product-listing.module.css';
 import inputClasses from '../../components/UI/Input/Input.module.css';
 import searchClasses from '../../pages/search.module.css';
 import headerClasses from '../../features/header/header.module.css';
-import filterClasses from '../filterPanel/filterPanel.module.css';
-import { object } from 'prop-types';
 // import {products} from './products';
 
 
@@ -50,7 +47,7 @@ let header = (
       <div className={headerClasses.projects}>            
           <NavigationItem link="/projects" exact>Projects</NavigationItem>   
           <div className={searchClasses.imgHover}>
-              <img src={require('../../images/'+localStorage.getItem('image'))} alt="logo" className={headerClasses.profile_img}/>
+              {localStorage.getItem('image')!=null?<img  src={require('../../images/'+localStorage.getItem('image'))} alt="logo" className={headerClasses.profile_img}/>: <img  src={logo} alt="logo" className={headerClasses.profile_img}/>}
               <div className={searchClasses.logout}>
                   <Link className={searchClasses.logout} to={{pathname: '/logout'}}>LOGOUT</Link>
               </div>

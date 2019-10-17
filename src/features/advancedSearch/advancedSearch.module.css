@@ -1,0 +1,79 @@
+.show_advancedSearch{
+    pointer-events: auto;
+    display: none;
+    position: absolute;
+    top: 3vh;
+    left: 14vw;
+    border: 2px solid rgb(199,199,199);
+    background-color: white;
+    height: 72%;
+    width: 43%;
+    font-size: 12px;
+}
+.title{
+    background-color: rgb(127,127,127);
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: white; 
+}
+.exit{
+    float: right;
+}
+.type{
+    background-color: rgb(242,242,242);
+    padding: 0.5%;
+    padding-left: 2%;
+    padding-right: 1%;
+    border-top: 1px solid rgb(205,205,205);
+    border-bottom: 1px solid rgb(205,205,205);
+}
+.filter_title{
+    padding: 1%;
+    padding-left: 2%;
+}
+.use_type{
+    color: rgb(93,89,100);
+    font-weight: bold;
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+}
+.inputTitle{
+    color: rgb(93,89,100);
+    font-weight: bold;
+    display: inline-block;
+    width: 40%;
+    margin: 0;
+}
+.filter_button input{
+    margin: 0;
+    width: 2vw;
+    height: 2vh;
+    vertical-align: bottom;
+    display: inline-block;
+}
+.dash{
+    height: 6px;
+    width: 15px;
+}
+.model_year_input{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 4vw;
+}
+.select{
+    margin-left: 2%;
+    width: 32%;
+}
+.searchButton{
+    margin-left: 10%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(99,123,163);
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-weight: bold;
+    color: white;
+}

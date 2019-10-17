@@ -12,6 +12,7 @@ import logo from '../images/logo.png';
 import FaSearch from 'react-icons/lib/fa/search';
 // import Header from  '../features/header/header';
 import ProductListing from '../features/product-listing';
+import AdvancedSearch from '../features/advancedSearch/advancedSearch';
 import FilterPanel from '../features/filterPanel/filterPanel';
 import ProductDetail from '../features/product_detail/product_detail';
 import * as actions from '../store/actions/index';
@@ -45,7 +46,11 @@ class searchpage extends Component {
         hits: [],
         isLoading: false,
         error: null,
-        display: false,        
+        display: false,  
+        showAdvSearch: "none",  
+        filters:null,    
+        selected:null,
+        toCompare:false,
         controls: {
             itemId: {
                 elementType: 'select',
@@ -151,7 +156,6 @@ class searchpage extends Component {
             hits: result.data,
             isLoading: false
         })
-        console.log("DISPLAY - "+this.state.display+" show_prods - "+show_prods);
         this.props.onSearch(this.state.controls.itemId.value, this.state.controls.item_type.value, this.state.hits);
         })
         .catch(error => this.setState({
@@ -162,21 +166,30 @@ class searchpage extends Component {
         console.log(this.state.controls.itemId.value+"|||"+this.state.controls.item_type.value+"|||"+this.state.hits);
         console.log(this.props);
     }
-    getData = (child) => {
-        console.log(child);
-    };
+    getData = (child) => {this.setState({showAdvSearch: child});};
+    getFilters = (c) => {this.setState({filters: c});}
+    getSelected = (c)=> {this.setState({selected: c});}
+    toCompare = (c)=> {this.setState({toCompare: c});}
     render(){
-        let form = null, logoTitle = null, searchInput = null, header = null, header_back = null, productsList = null, filter = null;  
+        let form = null, logoTitle = null, searchInput = null, header = null, header_back = null, productsList = null, filter = null, compare = null;
         const { hits, isLoading, error } = this.state;
-        if (error) {
-            return <p>{error.message}</p>;
+        if (error) {return <p>{error.message}</p>;}
+        if (isLoading) {return <p>Loading ...</p>;}
+        const inClassesName = [inputClasses.InputElement, inputClasses.search_inputElement];   
+        if(document.getElementById("prod_list")){ 
+            if(this.state.showAdvSearch==="block"){                 
+                document.getElementById("prod_list").style.pointerEvents = "none";
+                document.getElementById("filter").style.pointerEvents="none";
+            } 
+            else{
+                document.getElementById("prod_list").style.pointerEvents = "auto";
+                document.getElementById("filter").style.pointerEvents="auto";
+            }
         }
-        if (isLoading) {
-            return <p>Loading ...</p>;
-        }
-        const inClassesName = [inputClasses.InputElement, inputClasses.search_inputElement];        
-        // if(this.state.display){
+       
         if(show_prods){
+            if(this.state.selected != null) console.log(this.state.selected);
+            if(this.state.toCompare != null) console.log(this.state.toCompare);
             form = (
                 <div>
                     <div className={inputClasses.search_input}>                    
@@ -191,8 +204,7 @@ class searchpage extends Component {
                 </div>
             );
             header_back = (
-                <div className={searchClasses.header_back}>                    
-                </div>
+                <div className={searchClasses.header_back}> </div>
             );
             header = (
                 <div>
@@ -201,18 +213,12 @@ class searchpage extends Component {
                 <img src={logo} alt="logo" className={searchClasses.img} />   
                     <div className={headerClasses.projects}>            
                         <NavigationItem link="/projects" exact>Projects</NavigationItem>   
-                        {/* <Link className={searchClasses.logout} to={{pathname: '/logout'}}>LOGOUT</Link> */}
-                        {/* <div className={searchClasses.logout}>
-                        <Link to={{pathname: '/logout'}}></Link>
-                        <NavigationItem link="/logout" exact >Log out</NavigationItem> </div> */}
-
                         <div className={searchClasses.imgHover}>
                             <img src={require('../images/'+localStorage.getItem('image'))} alt="logo" className={headerClasses.profile_img}/>
                             <div className={searchClasses.logout}>
                                 <Link className={searchClasses.logout} to={{pathname: '/logout'}}>LOGOUT</Link>
                             </div>
-                        </div>
-                          
+                        </div>                          
                     </div>  
                 </ul></div>
             );
@@ -230,20 +236,34 @@ class searchpage extends Component {
                     </div>
                 </form> </div>
             );            
-            console.log(this.state);
-            console.log(this.props);    
             productsList = (
-            <div className = {searchClasses.show_products}>
-                <ProductListing products={hits} getData={this.getData} item_type={this.state.controls.item_type.value} itemId={this.state.controls.itemId.value}/>
-                {/* <ProductDetail/> */}
+            <div  className = {searchClasses.show_products}>
+                <div id="prod_list">
+                <ProductListing products={hits} showAdvSearch={this.state.showAdvSearch} getData={this.getData} getFilters={this.state.filters} getSelected={this.getSelected} toCompare={this.toCompare}item_type={this.state.controls.item_type.value} itemId={this.state.controls.itemId.value}/></div>
+                <AdvancedSearch showAdvSearch={this.state.showAdvSearch} products={hits} getData={this.getData} getFilters={this.getFilters}/>
+
             </div>
             );    
             filter = (
-                <div className={searchClasses.filter}>
-                    <FilterPanel />
+                <div id="filter" className={searchClasses.filter}>
+                    <FilterPanel getData={this.getData} getFilters={this.getFilters}/>
                 </div>
-            );      
-        }
+            );  
+            if(this.state.selected != null){
+            if(this.state.toCompare === true){
+                console.log(this.state.toCompare);
+                return (
+                    <div>                        
+                        {header}
+                        {searchInput}
+                        <div className={searchClasses.compareContainer}>
+                            {this.state.selected}
+                        </div>
+                    </div>
+                );
+            }  
+            }  
+        }         
         else{
             form = (
                 <div>
@@ -282,21 +302,23 @@ class searchpage extends Component {
         }
         return (  
             <div className={classes.form_center}>    
-                {header}
-                {logoTitle}
-                {searchInput}
-                {productsList}
-                {filter}                
+                <div>
+                    {header}
+                    {logoTitle}
+                    {searchInput}
+                    {productsList}
+                    {filter}   
+                    {/* {compare}  */}
+                </div>            
             </div>
         );
     }
 }
 
 const mapStateToProps = state => {
-    console.log("DISPLAY - "+state.display+" show_prods - "+show_prods);
     return {
         products_: state.hits,
-        // show_products_page: state.display,
+        show_products_page: state.display,
         show_products_page: show_prods
     };
 };

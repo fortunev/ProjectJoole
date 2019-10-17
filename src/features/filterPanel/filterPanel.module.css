@@ -63,20 +63,15 @@
     padding: 0;
     font-size: 25px;
 }
+.product_type_radioMain{
+    display: none;
+}
 .product_type_radio{
     padding-top: 0;
     padding-bottom: 2%;
     margin-left: 0;
     background-color: white;
-    display: none;
-}
-.product_type_radio_detail{
-    width: 185%;
-    padding-top: 0;
-    padding-bottom: 2%;
-    margin-left: 0;
-    background-color: white;
-    display: none;
+    /* display: none; */
 }
 .filter_title {    
     margin: 0;
@@ -92,15 +87,12 @@
     font-size: 12px;
     margin-left: 20%;
 }
-.showFilter:hover .product_type_radio{
+/* .showFilter:hover .product_type_radio{
     display: block;
-}
-.showFilter:hover .product_type_radio_detail{
-    display: block;
-}
-.showFilter:hover .CaretRight svg{
+} */
+/* .showFilter:hover .CaretRight svg{
     transform: rotate(90deg);
-}
+} */
 .model_year{
     color: rgb(89,89,89);
     margin-left: 5%;
@@ -119,9 +111,9 @@
     margin-right: 2%;
     width: 3vw;
 }
-.showFilter:hover .CaretRight_techSpec svg{
+/* .showFilter:hover .CaretRight_techSpec svg{
     transform: rotate(90deg);
-}
+} */
 .slider_title{
     color: rgb(89,89,89);
     margin-left: 5%;
@@ -129,6 +121,12 @@
     font-size: 14px;
     padding-top: 15%;
     margin-left: 26%;
+}
+.slider_input1{
+    display: flex;
+    margin-left: 2%;
+    margin-bottom: -30px;
+    margin-top: 0;
 }
 .slider_input{
     display: flex;

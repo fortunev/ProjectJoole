@@ -164,6 +164,10 @@ const ProductDetails = ({ product }) => {
               <td className={pClasses.tdata2}>{product.num_fan_speeds}</td>
             </tr>
             <tr>
+              <td className={pClasses.tdata}>Sound at max speed </td>
+              <td className={pClasses.tdata2}>{product.sound_at_max_speed}</td>
+            </tr>            
+            <tr>
               <td className={pClasses.tdata}>Fan sweep diameter (in) </td>
               <td className={pClasses.tdata2}>{product.fan_sweep_diameter}</td>
             </tr>

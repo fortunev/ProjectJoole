@@ -13,6 +13,7 @@ import ProductDetail from './features/product_detail/product_detail';
 import ProductPageWrapper from './components/prodPageWrapper/prodPageWrapper';
 // import Navigation from './components/navigation/navigation'
 import UserPage from './pages/userpage';
+import Comparison from './features/comparison/comparison';
 import * as actions from './store/actions/index';
 
 class App extends Component {

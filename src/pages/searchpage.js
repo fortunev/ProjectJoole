@@ -14,6 +14,7 @@ import FaSearch from 'react-icons/lib/fa/search';
 import ProductListing from '../features/product-listing';
 import AdvancedSearch from '../features/advancedSearch/advancedSearch';
 import FilterPanel from '../features/filterPanel/filterPanel';
+import Comparison from '../features/comparison/comparison';
 import ProductDetail from '../features/product_detail/product_detail';
 import * as actions from '../store/actions/index';
 import axios from 'axios';
@@ -49,7 +50,7 @@ class searchpage extends Component {
         display: false,  
         showAdvSearch: "none",  
         filters:null,    
-        selected:null,
+        selected: new Set(),
         toCompare:false,
         controls: {
             itemId: {
@@ -256,9 +257,7 @@ class searchpage extends Component {
                     <div>                        
                         {header}
                         {searchInput}
-                        <div className={searchClasses.compareContainer}>
-                            {this.state.selected}
-                        </div>
+                        <Comparison products={hits} selected={this.state.selected}/>
                     </div>
                 );
             }  
